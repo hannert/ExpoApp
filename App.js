@@ -1,12 +1,20 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Draggable from 'react-native-draggable';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import PersonFactory from './src/components/PersonFactory.js';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+    <GestureHandlerRootView style={styles.container}>
+    <Draggable isCircle={true} renderColor='black' x={300} y={200} renderText="This is draggable?"/>
+    <PersonFactory></PersonFactory>
+    <View>
+
+      <Draggable isCircle={true} renderColor='black' x={200} y={200} renderText="This is draggable?"/>
       <StatusBar style="auto" />
     </View>
+    </GestureHandlerRootView>
   );
 }
 
